@@ -9,7 +9,28 @@
     /*
       --- Exercise 1 ---
       remove the default styles for the ul list and the <a> links
+      
     */
+    ul{
+      margin:0;
+      padding:0;
+      border:0;
+      outline:0;
+      font-size:100%;
+      vertical-align:baseline;
+      background:transparent;
+
+    }
+
+    a {
+      margin:0;
+      padding:0;
+      border:0;
+      outline:0;
+      font-size:100%;
+      vertical-align:baseline;
+      background:transparent;
+    }
 
     /* --- end exercise 1 --- */
 
@@ -21,6 +42,25 @@
       Include a hover state to change the color (maybe to a bit darker)
       Include a linear transition for that hover state 
     */
+     
+    button {
+      
+      margin: 0;
+      border: 0;
+      outline: 0;
+      font-size: 100%;
+      vertical-align: baseline;
+      background: transparent;
+      padding: 10px;
+      border-radius: 5px;
+      transition:0.3s;
+      background-color: rgb(146, 146, 146);
+    }
+
+    button:hover {
+      background-color: rgb(88, 88, 88);
+    }
+
 
     /* --- end exercise 2 --- */
 
@@ -32,6 +72,11 @@
       width: 100vw;
       height: 60vh;
       background-color: aqua;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      justify-content: center;
+      
     }
     .item {
       width: 80px;
@@ -47,15 +92,31 @@
       the main content
     */
     /* add media query here */
-    .main-content {
-      /* add solution here */
+
+    @media screen and (min-width: 1200px) {
+      .main-content .container{
+        width: 1200px;
+      }
     }
+
+
     /* --- end exercise 4 --- */
     /*
       --- Exercise 5 ---
       Based on exercise 3 use a media query to change the display flex to column direction and space-between
       in mobile resolution < 380px
     */
+
+    @media screen and (max-width: 380px) {
+     
+      @media screen and (max-width: 380px) {
+      .main-content .container{
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+  }
+
     /* --- end exercise 5 --- */
   </style>
 </head>

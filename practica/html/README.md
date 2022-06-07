@@ -18,10 +18,12 @@ Add what is missing in our html `<head>` tag.
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="utf-8">
     <title>Document</title>
   </head>
 </html>
 ```
+
 
 ## Exercise 2
 
@@ -29,20 +31,20 @@ This html is not semantic what could we do to improve it.
 
 ```html
 <div class="main">
-  <div class="section">
-    <div>
-      <div class="list-item">List item</div>
-      <div class="list-item">List item</div>
-      <div class="list-item">List item</div>
-      <div class="list-item">List item</div>
-    </div>
+  <section class="section">
+    <ol>
+      <li class="list-item">List item</li>
+      <li class="list-item">List item</li>
+      <li class="list-item">List item</li>
+      <li class="list-item">List item</li>
+    </ol>
   </div>
   <div class="section">
-    <div class="form">
+    <form class="form">
       <label>description</label>
       <input type="text">
-    </div>
-  </div>
+    </form>
+  </section>
 </div>
 ```
 
@@ -57,12 +59,18 @@ If we want to include two CSS files like `reset.css`, `main.css`, and one javasc
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="main.css">
   <title>Document</title>
+
 </head>
 <body>
-
+  
+<script src="app.js"></script>
 </body>
+
 </html>
+
 ```
 
 ## Exercise 4
@@ -70,27 +78,28 @@ If we want to include two CSS files like `reset.css`, `main.css`, and one javasc
 We need to improve this html form markup. This form will call and endpoint `/register` with the right method. We also have to include the correct input type and mark all fields as required.
 
 ```html
-<form>
+<form action="/register">
   <div>
     <label>name</label>
-    <input>
+    <input required>
   </div>
   <div>
     <label>surname</label>
-    <input>
+    <input required>
   </div>
   <div>
     <label>phone</label>
-    <input>
+    <input required>
   </div>
   <div>
     <label>email</label>
-    <input>
+    <input required>
   </div>
   <div>
     <label>password</label>
-    <input>
+    <input required>
   </div>
-  <input value="register">
+  <input type="submit" value="register">
 </form>
+
 ```

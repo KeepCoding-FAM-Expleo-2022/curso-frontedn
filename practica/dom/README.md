@@ -1,6 +1,7 @@
 # DOM exercise
 
-In this exercise we want to create a button called fetch that returns all the soccer leagues in this API (https://api-football-standings.azharimm.site/leagues).
+In this exercise we want to create a button called fetch that returns 
+all the soccer leagues in this API (https://api-football-standings.azharimm.site/leagues).
 
 We have to
 

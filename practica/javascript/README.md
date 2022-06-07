@@ -29,7 +29,8 @@ const input = {
   },
 };
 
-const solution = ???
+const solution = input.billing.paymentMethod
+
 // add your solution in the console.log
 console.log(solution)
 ```
@@ -66,7 +67,15 @@ const input = {
   },
 };
 
-// add you solution here
+input.orders.map((order) => {
+  order.productld +='-'+
+order.storeLocale;
+  delete order.price
+  delete order.storeLocale;
+  return order;
+});
+
+
 
 const expected = [{
   productId: 'product-1-nl',
@@ -111,7 +120,14 @@ const input = {
   },
 };
 
-// add you solution here
+let res = input.orders.filter((item) => item.price > 10);
+console.log(res);
+
+input.orders = res;
+
+
+console.log(input);
+
 
 const expected = {
   name: 'test account',
@@ -138,7 +154,8 @@ const expected = {
 
 ## Exercise 4. map & filter
 
-Based on the input object we want to have the name of the order productIds with a price greater than 10, and separated by commas.
+Based on the input object we want to have the name of the order productIds
+ with a price greater than 10, and separated by commas.
 
 ```js
 const input = {
@@ -168,14 +185,30 @@ const input = {
   },
 };
 
-// add you solution here
+let result = '';
+const productsGreaterThanTen = input.orders.filter((order) => {
+	return order.price > 10;
+})
+.map((product) => {
+	result += product.productId + ', ';
+  return product;
+});
+
+result = result.substring(0, result.length - 2);
+
+console.log(result);
+
+result = result.substring(0, result.lenght - 2);
+console.log(result);
+
 
 const expected = 'product-1, product-2';
 ```
 
 ## Exercise 5. reduce
 
-Based on the input object we want the total price of the orders, and include them in the object.
+Based on the input object we want the total price of the orders, 
+and include them in the object.
 
 ```js
 const input = {
@@ -205,7 +238,11 @@ const input = {
   },
 };
 
-// add you solution here
+input.totalPrice = input.orders.reduce((a, b) => {
+	return a.price + b.price;
+});
+
+console.log(input);
 
 const expected = {
   totalPrice: 39,
