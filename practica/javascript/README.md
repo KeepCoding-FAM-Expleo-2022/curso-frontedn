@@ -29,7 +29,7 @@ const input = {
   },
 };
 
-const solution = input.billing.paymentMethod
+const solution = input.billing.paymentMethod['credit-card'];
 
 // add your solution in the console.log
 console.log(solution)
@@ -67,15 +67,10 @@ const input = {
   },
 };
 
-input.orders.map((order) => {
-  order.productld +='-'+
-order.storeLocale;
-  delete order.price
-  delete order.storeLocale;
-  return order;
-});
-
-
+const result = input.orders.map(order => ({
+  productId: `${order.productId}-${order.storeLocale}`
+}))
+// result da lo mismo que expected
 
 const expected = [{
   productId: 'product-1-nl',
@@ -120,14 +115,12 @@ const input = {
   },
 };
 
-let res = input.orders.filter((item) => item.price > 10);
-console.log(res);
+const result = {
+  ...input,
+  orders: input.orders.filter(item => item.price > 10),
+};
 
-input.orders = res;
-
-
-console.log(input);
-
+// result da lo mismo que expected
 
 const expected = {
   name: 'test account',
@@ -185,22 +178,12 @@ const input = {
   },
 };
 
-let result = '';
-const productsGreaterThanTen = input.orders.filter((order) => {
-	return order.price > 10;
-})
-.map((product) => {
-	result += product.productId + ', ';
-  return product;
-});
+const result = input.orders
+  .filter(order => order.price > 10)
+  .map(order => order.productId)
+  .join(', ');
 
-result = result.substring(0, result.length - 2);
-
-console.log(result);
-
-result = result.substring(0, result.lenght - 2);
-console.log(result);
-
+// result da lo mismo que expected
 
 const expected = 'product-1, product-2';
 ```
@@ -238,11 +221,14 @@ const input = {
   },
 };
 
-input.totalPrice = input.orders.reduce((a, b) => {
-	return a.price + b.price;
-});
+const totalPrice = input.orders.reduce((a, b) => a.price + b.price);
 
-console.log(input);
+const result = {
+  ...input,
+  totalPrice,
+};
+
+// result da lo mismo que expected
 
 const expected = {
   totalPrice: 39,

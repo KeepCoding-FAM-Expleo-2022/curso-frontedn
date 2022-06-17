@@ -18,7 +18,9 @@ Add what is missing in our html `<head>` tag.
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
   </head>
 </html>
@@ -30,22 +32,22 @@ Add what is missing in our html `<head>` tag.
 This html is not semantic what could we do to improve it.
 
 ```html
-<div class="main">
+<main class="main">
   <section class="section">
-    <ol>
+    <ul>
       <li class="list-item">List item</li>
       <li class="list-item">List item</li>
       <li class="list-item">List item</li>
       <li class="list-item">List item</li>
-    </ol>
-  </div>
-  <div class="section">
+    </ul>
+  </section>
+  <section class="section">
     <form class="form">
-      <label>description</label>
-      <input type="text">
+      <label for="description">description</label>
+      <input id="description" type="text">
     </form>
   </section>
-</div>
+</main>
 ```
 
 ## Exercise 3
@@ -62,7 +64,6 @@ If we want to include two CSS files like `reset.css`, `main.css`, and one javasc
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="main.css">
   <title>Document</title>
-
 </head>
 <body>
   
@@ -80,26 +81,25 @@ We need to improve this html form markup. This form will call and endpoint `/reg
 ```html
 <form action="/register">
   <div>
-    <label>name</label>
-    <input required>
+    <label for="name">name</label>
+    <input id="name" required>
   </div>
   <div>
-    <label>surname</label>
-    <input required>
+    <label for="surname">surname</label>
+    <input id="surname" required>
   </div>
   <div>
-    <label>phone</label>
-    <input required>
+    <label for="phone">phone</label>
+    <input id="phone" required>
   </div>
   <div>
-    <label>email</label>
-    <input required>
+    <label for="email">email</label>
+    <input id="email" required>
   </div>
   <div>
-    <label>password</label>
-    <input required>
+    <label for="password">password</label>
+    <input id="password" required>
   </div>
   <input type="submit" value="register">
 </form>
-
 ```
