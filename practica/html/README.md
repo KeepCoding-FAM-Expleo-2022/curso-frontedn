@@ -82,23 +82,23 @@ We need to improve this html form markup. This form will call and endpoint `/reg
 <form action="/register">
   <div>
     <label for="name">name</label>
-    <input id="name" required>
+    <input id="name" type="text" required>
   </div>
   <div>
     <label for="surname">surname</label>
-    <input id="surname" required>
+    <input id="surname" type="text" required>
   </div>
   <div>
     <label for="phone">phone</label>
-    <input id="phone" required>
+    <input id="phone" type="tel" required>
   </div>
   <div>
     <label for="email">email</label>
-    <input id="email" required>
+    <input id="email" type="email" required>
   </div>
   <div>
     <label for="password">password</label>
-    <input id="password" required>
+    <input id="password" type="password" required>
   </div>
   <input type="submit" value="register">
 </form>
