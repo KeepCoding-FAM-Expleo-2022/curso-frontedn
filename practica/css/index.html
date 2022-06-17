@@ -9,29 +9,18 @@
     /*
       --- Exercise 1 ---
       remove the default styles for the ul list and the <a> links
-      
     */
-    ul{
-      margin:0;
-      padding:0;
-      border:0;
-      outline:0;
-      font-size:100%;
-      vertical-align:baseline;
-      background:transparent;
-
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
-
     a {
-      margin:0;
-      padding:0;
-      border:0;
-      outline:0;
-      font-size:100%;
-      vertical-align:baseline;
-      background:transparent;
+      text-decoration: none;
+      color: initial;
+      padding: 0;
+      margin: 0;
     }
-
     /* --- end exercise 1 --- */
 
     /*
@@ -42,26 +31,17 @@
       Include a hover state to change the color (maybe to a bit darker)
       Include a linear transition for that hover state 
     */
-     
-    button {
-      
-      margin: 0;
-      border: 0;
-      outline: 0;
-      font-size: 100%;
-      vertical-align: baseline;
-      background: transparent;
-      padding: 10px;
+    .button {
       border-radius: 5px;
-      transition:0.3s;
-      background-color: rgb(146, 146, 146);
+      padding: 10px;
+      background-color: #040462;
+      transition: background-color .3s linear;
+      color: #fff;
     }
-
-    button:hover {
-      background-color: rgb(88, 88, 88);
+    .button:hover {
+      cursor: pointer;
+      background-color: #02022e;
     }
-
-
     /* --- end exercise 2 --- */
 
     /*
@@ -69,14 +49,12 @@
       align the red items to the center (horizontal and vertical) of the aqua container
     */
     .container {
-      width: 100vw;
+      width: 100%;
       height: 60vh;
       background-color: aqua;
       display: flex;
-      justify-content: center;
       align-items: center;
       justify-content: center;
-      
     }
     .item {
       width: 80px;
@@ -92,31 +70,30 @@
       the main content
     */
     /* add media query here */
-
     @media screen and (min-width: 1200px) {
-      .main-content .container{
+      .main-content {
+        /* podemos fijar el width aquí o mejor usar max-width en la clase fuera de la media query */
         width: 1200px;
+        max-width: 1200px;
       }
     }
-
-
+    .main-content {
+      max-width: 1200px;
+      /* es interesante usar margin: 0 auto; para fijarlo al centro en pantallas grandes */
+      margin: 0 auto;
+    }
     /* --- end exercise 4 --- */
     /*
       --- Exercise 5 ---
       Based on exercise 3 use a media query to change the display flex to column direction and space-between
       in mobile resolution < 380px
     */
-
     @media screen and (max-width: 380px) {
-     
-      @media screen and (max-width: 380px) {
-      .main-content .container{
+      .container {
         flex-direction: column;
         justify-content: space-between;
       }
     }
-  }
-
     /* --- end exercise 5 --- */
   </style>
 </head>
@@ -131,7 +108,7 @@
     </ul>
     <hr>
     <h2>Exercise 2</h2>
-    <button>Save</button>
+    <button class="button">Save</button>
     <hr>
     <h2>Exercise 3</h2>
     <div class="container">
